@@ -10,7 +10,7 @@ import br.com.wilkison.desafio.presentation.model.ShortEventView
 class ListEventsAdapter(
     private val context: Context,
     shortEventViewList: List<ShortEventView> = listOf(),
-    var onClickItem: (shortEventView: ShortEventView) -> Unit = {}
+    var onClickItem: (eventId: String) -> Unit = {}
 ) : RecyclerView.Adapter<ListEventsAdapter.ViewHolder>() {
 
     private var shortEventViewList = shortEventViewList.toMutableList()
@@ -49,7 +49,7 @@ class ListEventsAdapter(
             binding.tvItemShortEventPrice.text = shortEventView.price
 
             binding.itemviewShortEvent.setOnClickListener {
-                onClickItem(shortEventView)
+                onClickItem(shortEventView.id)
             }
         }
     }

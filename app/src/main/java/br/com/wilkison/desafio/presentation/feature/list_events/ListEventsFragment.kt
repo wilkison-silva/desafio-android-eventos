@@ -37,8 +37,10 @@ class ListEventsFragment : Fragment(R.layout.fragment_list_events) {
 
     private fun setupRecyclerView() {
         binding.eventsRecyclerview.adapter = adapter
-        adapter.onClickItem = { shortEventView ->
-
+        adapter.onClickItem = { eventId ->
+            val direction =
+                ListEventsFragmentDirections.actionListEventsFragmentToEventDetailsFragment(eventId)
+            navController.navigate(direction)
         }
     }
 
