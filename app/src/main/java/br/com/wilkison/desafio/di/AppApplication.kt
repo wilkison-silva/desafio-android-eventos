@@ -14,7 +14,9 @@ class AppApplication : Application() {
                 listOf(
                     retrofitModule,
                     serviceModule,
-                    repositoryModule
+                    repositoryModule,
+                    useCaseModule,
+                    viewModelModule
                 )
             )
         }

@@ -3,7 +3,7 @@ package br.com.wilkison.desafio.data.model
 import br.com.wilkison.desafio.domain.model.EventDomain
 
 data class EventData(
-    val date: Int,
+    val date: String,
     val description: String,
     val image: String,
     val longitude: Double,

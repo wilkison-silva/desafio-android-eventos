@@ -7,10 +7,10 @@ import retrofit2.http.Path
 
 interface EventService {
 
-    @GET("/events")
+    @GET("events")
     suspend fun getEvents(): Response<List<EventData>>
 
-    @GET("/events/{id}")
+    @GET("events/{id}")
     suspend fun getEventDetails(
         @Path("id") eventId: String,
     ): Response<EventData>
