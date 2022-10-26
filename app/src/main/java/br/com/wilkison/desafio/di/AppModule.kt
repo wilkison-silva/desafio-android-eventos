@@ -2,7 +2,7 @@ package br.com.wilkison.desafio.di
 
 import br.com.wilkison.desafio.BuildConfig
 import br.com.wilkison.desafio.data.repository.EventRepositoryImpl
-import br.com.wilkison.desafio.data.service.EventsService
+import br.com.wilkison.desafio.data.service.EventService
 import br.com.wilkison.desafio.domain.repository.EventRepository
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -32,11 +32,11 @@ val retrofitModule = module {
 }
 
 val serviceModule = module {
-    single<EventsService> { get<Retrofit>().create(EventsService::class.java) }
+    single<EventService> { get<Retrofit>().create(EventService::class.java) }
 }
 
 val repositoryModule = module {
     single<EventRepository> {
-        EventRepositoryImpl(get<EventsService>())
+        EventRepositoryImpl(get<EventService>())
     }
 }

@@ -5,7 +5,7 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface EventsService {
+interface EventService {
 
     @GET("/events")
     suspend fun getEvents(): Response<List<EventData>>
