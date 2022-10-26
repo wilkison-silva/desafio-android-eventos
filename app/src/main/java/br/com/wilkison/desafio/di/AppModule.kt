@@ -1,5 +1,6 @@
 package br.com.wilkison.desafio.di
 
+import android.content.Context
 import br.com.wilkison.desafio.BuildConfig
 import br.com.wilkison.desafio.data.repository.EventRepositoryImpl
 import br.com.wilkison.desafio.data.service.EventService
@@ -8,6 +9,7 @@ import br.com.wilkison.desafio.domain.usecases.get_event_details.GetEventDetails
 import br.com.wilkison.desafio.domain.usecases.get_event_details.GetEventDetailsUseCaseImpl
 import br.com.wilkison.desafio.domain.usecases.get_events_list.GetEventsListUseCase
 import br.com.wilkison.desafio.domain.usecases.get_events_list.GetEventsListUseCaseImpl
+import br.com.wilkison.desafio.presentation.feature.list_events.ListEventsAdapter
 import br.com.wilkison.desafio.presentation.feature.list_events.ListEventsViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -60,4 +62,8 @@ val viewModelModule = module {
     viewModel<ListEventsViewModel> {
         ListEventsViewModel(get<GetEventsListUseCase>())
     }
+}
+
+val recyclerViewAdaptersModule = module {
+    factory<ListEventsAdapter> { ListEventsAdapter(get<Context>()) }
 }

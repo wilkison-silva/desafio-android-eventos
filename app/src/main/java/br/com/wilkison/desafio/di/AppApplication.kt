@@ -16,7 +16,8 @@ class AppApplication : Application() {
                     serviceModule,
                     repositoryModule,
                     useCaseModule,
-                    viewModelModule
+                    viewModelModule,
+                    recyclerViewAdaptersModule
                 )
             )
         }

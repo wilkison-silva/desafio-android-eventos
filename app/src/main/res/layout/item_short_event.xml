@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemview_short_event"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="16dp">
+
+    <TextView
+        android:id="@+id/tv_item_short_event_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="@string/titulo_exemplo"
+        android:textSize="22sp"
+        android:maxLines="3"
+        android:textColor="@color/white"
+        android:ellipsize="end"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_item_short_event_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="R$ 49,90"
+        android:textSize="16sp"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_green_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_item_short_event_title"/>
+
+    <TextView
+        android:id="@+id/tv_item_short_event_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_item_short_event_price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_item_short_event_title"
+        tools:text="26/10/2022" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#1F435F"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_item_short_event_date"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

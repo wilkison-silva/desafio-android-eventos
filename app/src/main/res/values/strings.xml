@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Eventos</string>
+    <string name="titulo_exemplo">Título de exemplo</string>
 </resources>
