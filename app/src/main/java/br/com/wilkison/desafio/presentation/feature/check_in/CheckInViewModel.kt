@@ -11,12 +11,11 @@ class CheckInViewModel(
     private val checkInValidationUseCase: CheckInValidationUseCase
 ) : ViewModel() {
 
-
     private val _validationState: MutableStateFlow<CheckInValidationState> =
         MutableStateFlow(CheckInValidationState.EmptyState)
     val validationState = _validationState.asStateFlow()
 
-    fun doCheckIn(name: String, email: String) {
+    fun validateFields(name: String, email: String) {
         when (checkInValidationUseCase.validate(name = name, email = email)) {
             is CheckInValidationUseCaseResult.ErrorEmailIsBlank -> {
                 _validationState.value = CheckInValidationState.EmailIsBlank

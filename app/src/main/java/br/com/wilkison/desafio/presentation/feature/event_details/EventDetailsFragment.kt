@@ -8,9 +8,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import br.com.wilkison.desafio.R
 import br.com.wilkison.desafio.databinding.FragmentEventDetailsBinding
-import br.com.wilkison.desafio.extensions.checkInDialog
 import br.com.wilkison.desafio.extensions.tryLoadImage
 import br.com.wilkison.desafio.presentation.feature.event_details.states.EventDetailsState
+import br.com.wilkison.desafio.presentation.feature.list_events.ListEventsFragmentDirections
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class EventDetailsFragment : Fragment(R.layout.fragment_event_details) {
@@ -41,15 +41,9 @@ class EventDetailsFragment : Fragment(R.layout.fragment_event_details) {
             navController.popBackStack()
         }
         binding.buttonCheckIn.setOnClickListener {
-            checkInDialog(
-               context = requireContext(),
-               onSuccess = {
-
-               },
-                onFailure = {
-
-                }
-            )
+            val direction =
+                EventDetailsFragmentDirections.actionEventDetailsFragmentToCheckInFragment()
+            navController.navigate(direction)
         }
     }
 

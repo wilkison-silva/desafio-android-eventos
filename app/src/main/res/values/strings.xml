@@ -16,4 +16,5 @@
     <string name="email_nao_pode_ser_vazio">E-mail não pode ser vazio</string>
     <string name="email_invalido">E-mail inválido</string>
     <string name="nome_nao_pode_ser_vazio">Nome não pode ser vazio</string>
+    <string name="check_in_title">Check In</string>
 </resources>
