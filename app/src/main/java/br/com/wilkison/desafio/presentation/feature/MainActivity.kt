@@ -1,4 +1,4 @@
-package br.com.wilkison.desafio.feature
+package br.com.wilkison.desafio.presentation.feature
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

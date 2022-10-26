@@ -1,4 +1,4 @@
-package br.com.wilkison.desafio.feature.list_events
+package br.com.wilkison.desafio.presentation.feature.list_events
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
