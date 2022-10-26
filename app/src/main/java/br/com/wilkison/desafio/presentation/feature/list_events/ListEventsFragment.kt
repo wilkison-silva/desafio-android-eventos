@@ -1,7 +1,6 @@
 package br.com.wilkison.desafio.presentation.feature.list_events
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -38,7 +37,7 @@ class ListEventsFragment : Fragment(R.layout.fragment_list_events) {
     private fun setupRecyclerView() {
         binding.eventsRecyclerview.adapter = adapter
         adapter.onClickItem = { shortEventView ->
-            Log.i("Testando", "Id do item -> ${shortEventView.id}")
+
         }
     }
 
@@ -47,12 +46,16 @@ class ListEventsFragment : Fragment(R.layout.fragment_list_events) {
             viewModel.listEventsState.collect { listEventsState ->
                 when (listEventsState) {
                     is ListEventsState.Error -> {
-
+                        binding.textviewErrorMessage.visibility = View.VISIBLE
+                        binding.progressBarEventsList.visibility = View.GONE
                     }
                     is ListEventsState.Loading -> {
-
+                        binding.progressBarEventsList.visibility = View.VISIBLE
+                        binding.eventsRecyclerview.visibility = View.GONE
                     }
                     is ListEventsState.Success -> {
+                        binding.progressBarEventsList.visibility = View.GONE
+                        binding.eventsRecyclerview.visibility = View.VISIBLE
                         adapter.updateList(list = listEventsState.shortEventViewList)
                     }
                 }
