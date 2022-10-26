@@ -5,10 +5,13 @@ import br.com.wilkison.desafio.BuildConfig
 import br.com.wilkison.desafio.data.repository.EventRepositoryImpl
 import br.com.wilkison.desafio.data.service.EventService
 import br.com.wilkison.desafio.domain.repository.EventRepository
+import br.com.wilkison.desafio.domain.usecases.check_in_validation.CheckInValidationUseCase
+import br.com.wilkison.desafio.domain.usecases.check_in_validation.CheckInValidationUseCaseImpl
 import br.com.wilkison.desafio.domain.usecases.get_event_details.GetEventDetailsUseCase
 import br.com.wilkison.desafio.domain.usecases.get_event_details.GetEventDetailsUseCaseImpl
 import br.com.wilkison.desafio.domain.usecases.get_events_list.GetEventsListUseCase
 import br.com.wilkison.desafio.domain.usecases.get_events_list.GetEventsListUseCaseImpl
+import br.com.wilkison.desafio.presentation.feature.check_in.CheckInViewModel
 import br.com.wilkison.desafio.presentation.feature.event_details.EventDetailsViewModel
 import br.com.wilkison.desafio.presentation.feature.list_events.ListEventsAdapter
 import br.com.wilkison.desafio.presentation.feature.list_events.ListEventsViewModel
@@ -57,6 +60,9 @@ val useCaseModule = module {
     single<GetEventDetailsUseCase> {
         GetEventDetailsUseCaseImpl(get<EventRepository>())
     }
+    single<CheckInValidationUseCase> {
+        CheckInValidationUseCaseImpl()
+    }
 }
 
 val viewModelModule = module {
@@ -65,6 +71,9 @@ val viewModelModule = module {
     }
     viewModel<EventDetailsViewModel> {
         EventDetailsViewModel(get<GetEventDetailsUseCase>())
+    }
+    viewModel<CheckInViewModel> {
+        CheckInViewModel(get<CheckInValidationUseCase>())
     }
 }
 

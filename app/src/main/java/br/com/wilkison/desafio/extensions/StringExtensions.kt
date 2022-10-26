@@ -1,5 +1,6 @@
 package br.com.wilkison.desafio.extensions
 
+import android.util.Patterns
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -15,4 +16,8 @@ fun String?.convertTimestampToDate(): String {
     } catch (e: Exception) {
         SEM_DATA_DEFINIDA
     }
+}
+
+fun String.isValidEmail(): Boolean {
+    return Patterns.EMAIL_ADDRESS.matcher(this).matches()
 }

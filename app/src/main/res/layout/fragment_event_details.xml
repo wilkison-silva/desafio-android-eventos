@@ -182,7 +182,7 @@
                 tools:text="@string/description_example" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/mbSignIn"
+                android:id="@+id/button_check_in"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
