@@ -13,9 +13,9 @@ class EventRepositoryImpl(
         try {
             val response = eventService.getEvents()
             if (response.isSuccessful) {
-                response.body()?.let { eventDataList ->
-                    val eventDomainList = eventDataList.map { it.convertToEventDomain() }
-                    return GetEventsResult.Success(eventDomainList = eventDomainList)
+                response.body()?.let { shortEventDataList ->
+                    val shortEventDomainList = shortEventDataList.map { it.convertToShortEventDomain() }
+                    return GetEventsResult.Success(shortEventDomainList = shortEventDomainList)
                 }
             }
         } catch (e: java.lang.Exception) {

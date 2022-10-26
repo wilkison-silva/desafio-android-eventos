@@ -12,8 +12,8 @@ class GetEventsListUseCaseImpl(
                 GetEventsListUseCaseResult.Error
             }
             is GetEventsResult.Success -> {
-                val eventViewList = result.eventDomainList.map { it.convertToEventView() }
-                GetEventsListUseCaseResult.Success(eventViewList = eventViewList)
+                val shortEventViewList = result.shortEventDomainList.map { it.convertToShortEventView() }
+                GetEventsListUseCaseResult.Success(shortEventViewList = shortEventViewList)
             }
         }
     }

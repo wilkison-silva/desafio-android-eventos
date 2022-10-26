@@ -16,11 +16,11 @@ class ListEventsViewModel(
         viewModelScope.launch {
             when (val getEventsListResult = getEventsListUseCase.getEventsList()) {
                 is GetEventsListUseCaseResult.Error -> {
-                    Log.i("testando", "erro ")
+                    Log.i("Testando", "erro ao buscar")
                 }
                 is GetEventsListUseCaseResult.Success -> {
-                    getEventsListResult.eventViewList.forEach {
-                        Log.i("testando", "title -> ${it.title} ${it.date} ${it.price}")
+                    getEventsListResult.shortEventViewList.forEach {
+                        Log.i("Testando", "getEventsList: $it")
                     }
                 }
             }
