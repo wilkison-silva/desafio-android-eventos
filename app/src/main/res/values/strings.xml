@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Eventos</string>
-    <string name="titulo_exemplo">Título de exemplo</string>
-    <string name="eventos_disponiveis">Eventos Disponíveis =)</string>
-    <string name="desculpe_mas_algo_deu_errado_vefique_sua_conex_o_com_a_internet">Desculpe, mas algo deu errado. Vefique sua conexão com a internet =/</string>
+    <string name="exemplo_title">Título de exemplo</string>
+    <string name="available_events">Eventos Disponíveis =)</string>
+    <string name="error_message">Desculpe, mas algo deu errado. Vefique sua conexão com a internet =/</string>
+    <string name="description">Descrição</string>
+    <string name="description_example">A disgraced parole officer is indebted to a local gang leader and forced to pull off a series of dangerous drug heists within twelve hours in order to pay the $2 million dollars he owes, rescue his kidnapped pregnant wife, and settle a score with the city\'s corrupt police chief, who is working with the gang leader and double-crossed him years ago.</string>
+    <string name="event_image">Imagem do evento</string>
+    <string name="event_details">Detalhes do Evento</string>
+    <string name="price_example">R$ 49,90</string>
+    <string name="date_example">26/10/2022 13:00</string>
 </resources>

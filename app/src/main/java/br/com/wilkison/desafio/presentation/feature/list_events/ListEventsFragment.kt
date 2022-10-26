@@ -7,6 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import br.com.wilkison.desafio.R
 import br.com.wilkison.desafio.databinding.FragmentListEventsBinding
+import br.com.wilkison.desafio.presentation.feature.event_details.states.EventDetailsState
 import br.com.wilkison.desafio.presentation.feature.list_events.states.ListEventsState
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel

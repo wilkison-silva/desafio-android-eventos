@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview_movie_details_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#121827">
+
+        <ImageView
+            android:id="@+id/button_back"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/ic_action_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/event_image" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/button_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_back"
+            app:layout_constraintTop_toTopOf="@+id/button_back"
+            tools:text="@string/event_details" />
+
+        <ImageView
+            android:id="@+id/imageview_event_image"
+            android:layout_width="0dp"
+            android:layout_height="270dp"
+            android:contentDescription="@string/event_image"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBotomOf="@+id/button_back"
+            app:layout_constraintTop_toBottomOf="@+id/button_back"
+            app:layout_constraintVertical_bias="0.060000002"
+            tools:src="@drawable/ic_image_movie_placeholder" />
+
+
+        <TextView
+            android:id="@+id/textview_event_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageview_event_image"
+            tools:text="@string/exemplo_title" />
+
+        <TextView
+            android:id="@+id/textview_event_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@+id/textview_event_title"
+            app:layout_constraintTop_toBottomOf="@+id/textview_event_title"
+            tools:text="@string/price_example" />
+
+        <TextView
+            android:id="@+id/textview_event_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="#88FFFFFF"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textview_event_price"
+            app:layout_constraintEnd_toEndOf="@+id/textview_event_title"
+            app:layout_constraintStart_toEndOf="@+id/textview_event_price"
+            app:layout_constraintTop_toBottomOf="@+id/textview_event_title"
+            tools:text="@string/date_example" />
+
+        <View
+            android:id="@+id/horizontal_view1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#1F435F"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_event_price" />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/description"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontal_view1" />
+
+        <TextView
+            android:id="@+id/textview_event_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:textColor="#88FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:text="@string/description_example" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -9,6 +9,7 @@ import br.com.wilkison.desafio.domain.usecases.get_event_details.GetEventDetails
 import br.com.wilkison.desafio.domain.usecases.get_event_details.GetEventDetailsUseCaseImpl
 import br.com.wilkison.desafio.domain.usecases.get_events_list.GetEventsListUseCase
 import br.com.wilkison.desafio.domain.usecases.get_events_list.GetEventsListUseCaseImpl
+import br.com.wilkison.desafio.presentation.feature.event_details.EventDetailsViewModel
 import br.com.wilkison.desafio.presentation.feature.list_events.ListEventsAdapter
 import br.com.wilkison.desafio.presentation.feature.list_events.ListEventsViewModel
 import okhttp3.OkHttpClient
@@ -61,6 +62,9 @@ val useCaseModule = module {
 val viewModelModule = module {
     viewModel<ListEventsViewModel> {
         ListEventsViewModel(get<GetEventsListUseCase>())
+    }
+    viewModel<EventDetailsViewModel> {
+        EventDetailsViewModel(get<GetEventDetailsUseCase>())
     }
 }
 
