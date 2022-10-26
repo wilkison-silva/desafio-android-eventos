@@ -42,7 +42,7 @@ class EventDetailsFragment : Fragment(R.layout.fragment_event_details) {
         }
         binding.buttonCheckIn.setOnClickListener {
             val direction =
-                EventDetailsFragmentDirections.actionEventDetailsFragmentToCheckInFragment()
+                EventDetailsFragmentDirections.actionEventDetailsFragmentToCheckInFragment(eventId)
             navController.navigate(direction)
         }
     }

@@ -17,4 +17,8 @@
     <string name="email_invalido">E-mail inválido</string>
     <string name="nome_nao_pode_ser_vazio">Nome não pode ser vazio</string>
     <string name="check_in_title">Check In</string>
+    <string name="mensagem_erro_check_in">Desculpe. Algo deu errado aqui.</string>
+    <string name="check_in_confirmado">Check in confirmado!!</string>
+    <string name="close">Fechar</string>
+    <string name="enviando">Enviando...</string>
 </resources>

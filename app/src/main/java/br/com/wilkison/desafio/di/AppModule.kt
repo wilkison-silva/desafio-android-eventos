@@ -11,6 +11,8 @@ import br.com.wilkison.desafio.domain.usecases.get_event_details.GetEventDetails
 import br.com.wilkison.desafio.domain.usecases.get_event_details.GetEventDetailsUseCaseImpl
 import br.com.wilkison.desafio.domain.usecases.get_events_list.GetEventsListUseCase
 import br.com.wilkison.desafio.domain.usecases.get_events_list.GetEventsListUseCaseImpl
+import br.com.wilkison.desafio.domain.usecases.send_check_in_info.SendCheckInInfoUseCase
+import br.com.wilkison.desafio.domain.usecases.send_check_in_info.SendCheckInInfoUseCaseImpl
 import br.com.wilkison.desafio.presentation.feature.check_in.CheckInViewModel
 import br.com.wilkison.desafio.presentation.feature.event_details.EventDetailsViewModel
 import br.com.wilkison.desafio.presentation.feature.list_events.ListEventsAdapter
@@ -21,12 +23,17 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import java.util.concurrent.TimeUnit
 
 private const val URL_BASE = "http://5f5a8f24d44d640016169133.mockapi.io/api/"
 
 val retrofitModule = module {
     single<OkHttpClient> {
-        val client = OkHttpClient.Builder()
+        val client = OkHttpClient
+            .Builder()
+            .connectTimeout(1, TimeUnit.MINUTES)
+            .readTimeout(1, TimeUnit.MINUTES)
+            .writeTimeout(1, TimeUnit.MINUTES)
         if (BuildConfig.DEBUG) {
             val logging = HttpLoggingInterceptor()
             logging.setLevel(HttpLoggingInterceptor.Level.BASIC)
@@ -63,6 +70,9 @@ val useCaseModule = module {
     single<CheckInValidationUseCase> {
         CheckInValidationUseCaseImpl()
     }
+    single<SendCheckInInfoUseCase> {
+        SendCheckInInfoUseCaseImpl(get<EventRepository>())
+    }
 }
 
 val viewModelModule = module {
@@ -73,7 +83,10 @@ val viewModelModule = module {
         EventDetailsViewModel(get<GetEventDetailsUseCase>())
     }
     viewModel<CheckInViewModel> {
-        CheckInViewModel(get<CheckInValidationUseCase>())
+        CheckInViewModel(
+            get<CheckInValidationUseCase>(),
+            get<SendCheckInInfoUseCase>()
+        )
     }
 }
 

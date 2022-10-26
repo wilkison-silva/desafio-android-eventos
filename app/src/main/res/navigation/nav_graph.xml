@@ -38,5 +38,9 @@
         android:id="@+id/checkInFragment"
         android:name="br.com.wilkison.desafio.presentation.feature.check_in.CheckInFragment"
         android:label="CheckInFragment"
-        tools:layout="@layout/fragment_check_in"/>
+        tools:layout="@layout/fragment_check_in">
+        <argument
+            android:name="eventId"
+            app:argType="string" />
+    </fragment>
 </navigation>
