@@ -9,4 +9,5 @@
     <string name="event_details">Detalhes do Evento</string>
     <string name="price_example">R$ 49,90</string>
     <string name="date_example">26/10/2022 13:00</string>
+    <string name="check_in">Check In</string>
 </resources>

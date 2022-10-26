@@ -181,6 +181,25 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView"
                 tools:text="@string/description_example" />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbSignIn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:text="@string/check_in"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:cornerRadius="30dp"
+                android:layout_marginBottom="36dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_event_description"
+                app:layout_constraintVertical_bias="0.692" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
