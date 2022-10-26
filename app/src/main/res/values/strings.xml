@@ -21,4 +21,6 @@
     <string name="check_in_confirmado">Check in confirmado!!</string>
     <string name="close">Fechar</string>
     <string name="enviando">Enviando...</string>
+    <string name="mais_um_evento_pra_conta">Mais um evento pra conta</string>
+    <string name="seu_check_in_foi_confirmado">Seu check-in foi confirmado!!</string>
 </resources>

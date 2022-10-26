@@ -14,6 +14,8 @@ import br.com.wilkison.desafio.extensions.withoutError
 import br.com.wilkison.desafio.presentation.feature.check_in.states.CheckInState
 import br.com.wilkison.desafio.presentation.feature.check_in.states.CheckInValidationState
 import br.com.wilkison.desafio.presentation.feature.event_details.EventDetailsFragmentArgs
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CheckInFragment : Fragment(R.layout.fragment_check_in) {
@@ -88,9 +90,14 @@ class CheckInFragment : Fragment(R.layout.fragment_check_in) {
                         view?.showSnackBar(
                             message = getString(R.string.check_in_confirmado)
                         )
-                        navController.popBackStack()
+                        lifecycleScope.launch {
+                            delay(3000)
+                            navController.popBackStack()
+                        }
                     }
                     is CheckInState.Loading -> {
+                        binding.progressBarLeft.visibility = View.VISIBLE
+                        binding.progressBarRight.visibility = View.VISIBLE
                         binding.buttonCheckIn.text = getString(R.string.enviando)
                         binding.buttonCheckIn.isEnabled = false
                     }

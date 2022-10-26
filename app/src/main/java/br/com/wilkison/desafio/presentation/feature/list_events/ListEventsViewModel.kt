@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.wilkison.desafio.domain.usecases.get_events_list.GetEventsListUseCase
 import br.com.wilkison.desafio.domain.usecases.get_events_list.GetEventsListUseCaseResult
-import br.com.wilkison.desafio.presentation.feature.event_details.states.EventDetailsState
 import br.com.wilkison.desafio.presentation.feature.list_events.states.ListEventsState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
