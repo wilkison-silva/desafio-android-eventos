@@ -43,3 +43,23 @@ O POST deve conter os dados do interessado (Nome, e-mail) e o id do evento. Ex:
 - Não inicie o teste sem sanar todas as dúvidas;
 - A API pode ter falhas, prepare seu aplicativo para contorná-las.
 Bom teste!
+
+
+## Definições utilizadas no desafio
+
+- Layout: XML
+- Navegação - Jetpack Navigation
+- Arquitetura: MVVM + Clean Arch
+- Principais Libs: Retrofit (para comunicação web), Coil (para baixar imagens), Mockk (para testes unitários), Coroutines (para processamento assícrono), Koin (para injeção de dependências), MutableStateFlow para eventos na UI (evitei usar livedata, pois o mesmo não é null safety).
+
+Projeto montado utilizando as 3 camadas do clean arch: Data, Domain e Presentation e uso de interface para tornar os testes unitários mais fáceis por não depender de implementações e sim de contratos de interface. Defini que o projeto necessitava de apenas uma activity e 3 fragments para as features principais: lista de eventos, detalhes de ventos e fazer check-in.
+
+## Requisitos para fazer o Build do projeto
+
+- plugin do kotlin para android 1.7.10
+- plugin do gradle 7.3.0
+- Java 1.8
+
+## Demonstração do App
+
+https://user-images.githubusercontent.com/74081311/198466876-bec01cbc-9ab0-4f6d-8672-6c17a6115271.mp4
